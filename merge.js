@@ -28,6 +28,8 @@ app.get('/merge', async (req, res) => {
   
         const overlayImage = await Jimp.read(Buffer.from(b64, 'base64'));
   
+        overlayImage.resize(baseImage.bitmap.width, baseImage.bitmap.height);
+
         baseImage.composite(overlayImage, 0, 0, {
           mode: Jimp.BLEND_SOURCE_OVER,
           opacitySource: 1,
