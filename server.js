@@ -10,7 +10,7 @@ app.use(cors());
 const home = "https://bible-explorer.bubbleapps.io/version-test/"; 
     const uploadEndpoint = `${home}fileupload`; 
 
-app.get('/merge', async (req, res) => {
+app.post('/merge', async (req, res) => {
   try {
     // Extract image URL and overlay base64 from query parameters
     const imageUrl = req.query.imageUrl;
